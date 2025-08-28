@@ -1,8 +1,26 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #272727;
+  color: #fff;
 }
-
+header, footer {
+  text-align: center;
+  padding: 1em;
+  background-color: #333;
+  color: white;
+}
+header h1 {
+  margin: 0;
+}
+header p {
+  margin: 0;
+  font-style: italic;
+}
 a {
-  color: #00B7FF;
+  color: #1E90FF;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
