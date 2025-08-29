@@ -1,11 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
 /* Estilos de la pagian bases */
+
+/* Variables de los estilos oscuro y claro */
 :root{
-
+  --back-color: #FBFAE9;
+  --back-color-alt: #42A5F5;
+  --back-color-alt-2: #FF9800;
+  --text-color: #1A1A1A;
+  --text-color-alt: #2D9BF0;
+  --live-color: #FF9800;
+  --primary-color: #0D47A1;
 }
-.dark-mode{
-
+.darkmode{
+  --back-color: #FBFAE9;
+  --back-color-alt: #42A5F5;
+  --text-color: #1A1A1A;
+  --text-color-alt: #2D9BF0;
+  --live-color: #FF9800;
+  --primary-color: #0D47A1;
 }
+/*  Estilos Boton de cambio de de tema */
+#themeSwitcher{
+  height: 50px; width: 50px;
+  padding: 0;
+  border-radius: 50%;
+  border-width: 0;
+  background-color: var(--back-color-alt-2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+#themeSwitcher svg{
+  fill: var(--primary-color);
+}
+#themeSwitcher svg:last-child{
+  display: none;
+}
+.darkmode #themeSwitcher svg:first-child{
+  display: none;
+}
+.darkmode #themeSwitcher svg:last-child{
+  display: block;
+}
+
+/* Estilos Generales */
 html, body{
   margin: 0;
   padding: 0;
@@ -13,8 +54,8 @@ html, body{
   font: 16px "montserrat", sans-serif;
 }
 body{
-  background: #272727;
-  color: #fff;
+  background: var(--back-color);
+  color: var(--text-color);
   /*Atributo flex al body para el manejo del 100 de la altura*/
   display: flex;
   flex-direction: column;
@@ -23,8 +64,8 @@ body{
 /* Estilos del header y footer */
 header, footer {
   text-align: center;
-  padding: 1em;
-  background-color: #2D9BF0;
+  padding: 0 1em;
+  background-color: var(--back-color-alt);
   color: white;
   display: flex;
   align-items: center;
@@ -48,17 +89,36 @@ a {
 
 header .navBar a {
   font-family: 'Handlee', cursive;
-  color: #1A1A1A;
+  color: var(--text-color);
   text-decoration: none;
   margin: 0 1em;
   display: inline-block; 
   transition: color 0.3s ease-in-out, transform 0.5s ease-in-out;
 }
-
 header .navBar a:hover {
-  color: #fff;
+  color: var(--text-color-alt);
   transform: scale(1.3) translateY(-4px);
 }
+
+/* Distribuicion del navBar por bloques */
+.navLeft{
+  flex: 1;
+  text-align: left;
+  display: flex;
+}
+.navCenter{
+  padding: 0 1em;
+  flex: 2;
+  text-align: left;
+}
+.navRight{
+  flex: 1;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* contenedor del cotenido interno de la WEB*/
 .container {
   width: 80%;
   margin: auto;
