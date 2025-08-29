@@ -1,5 +1,5 @@
-let darkmode =localStorage.getItem("darkmode")
-const themeSwitcher = document.getElementById("themeSwitcher");
+let darkmode = localStorage.getItem("darkmode")
+const themeSwitcher = document.getElementById("themeSwitcher")
 
 const enableDarkMode = () => {
     document.body.classList.add("darkmode")
