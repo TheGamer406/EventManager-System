@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+        <!--Cargar estilos de la hoja de error-->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <div class="container" style="text-align:center; margin-top:4em;">
+    <h1>Error <%= error.status || 500 %></h1>
+    <p><%= message %></p>
+    <% if (error.stack) { %>
+        <pre style="color:#c00; background:#f8f8f8; padding:1em; border-radius:8px;"><%= error.stack %></pre>
+    <% } %>
+    <a href="/" style="color:#42A5F5;">Volver al inicio</a>
+</div>
+</body>
+</html>
