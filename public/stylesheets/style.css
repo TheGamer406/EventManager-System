@@ -107,12 +107,7 @@ header .navBar a:hover {
   margin: 0 2em;
 }
 /* Distribuicion del navBar por bloques */
-.navLeft{
-  flex: 1;
-  text-align: left;
-  display: flex;
-  align-items: center;
-}
+
 .navCenter{
   padding: 0 1em;
   flex: 2;
@@ -140,4 +135,123 @@ header .navBar a:hover {
   /* Atributo para que el container ocupe el espacion posible pero que deje el
   footer y el header si no tiene mucho contenido para el 100% de la pantalla*/
   flex: 1;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100vh;
+  background: linear-gradient(135deg, var(--primary-color) 60%, var(--back-color-alt) 100%);
+  color: var(--back-color-alt-2);
+  box-shadow: 2px 0 8px rgba(0,0,0,0.08);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  padding-top: 70px;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin: 1.5em 0;
+  text-align: left;
+}
+
+.sidebar ul li a {
+  color: var(--text-color-alt);
+  font-family: var(--fuente-secundaria);
+  font-size: 1.2em;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  display: block;
+  transition: background 0.2s;
+}
+
+.sidebar ul li a:hover {
+  background: var(--primary-color);
+  color: var(--back-color-alt-2);
+  border-radius: 6px;
+}
+
+/* Toggle button */
+.sidebar-toggle {
+  position: absolute;
+  left: 10px;
+  top: 18px;
+  background: transparent;
+  border: none;
+  font-size: 2em;
+  color: var(--primary-color);
+  cursor: pointer;
+  z-index: 1100;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-toggle .bar {
+  display: block;
+  width: 28px;
+  height: 4px;
+  margin: 4px 0;
+  background: var(--primary-color);
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+.sidebar-open .sidebar-toggle .bar1 {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+.sidebar-open .sidebar-toggle .bar2 {
+  opacity: 0;
+}
+.sidebar-open .sidebar-toggle .bar3 {
+  transform: rotate(45deg) translate(-6px, -6px);
+}
+
+/* Move navBar when sidebar is open */
+.sidebar-open .navCenter {
+  margin-left: 220px;
+  transition: margin-left 0.3s;
+}
+.sidebar-open .navRight {
+  margin-left: 220px;
+  transition: margin-left 0.3s;
+}
+
+/* Mueve también el contenido y el footer cuando el sidebar está abierto */
+.sidebar-open .container {
+  margin-left: 220px;
+  transition: margin-left 0.3s;
+}
+.sidebar-open footer {
+  margin-left: 220px;
+  transition: margin-left 0.3s;
+}
+
+/* Responsive: mueve todo menos el sidebar */
+@media (max-width: 700px) {
+  .sidebar {
+    width: 160px;
+    padding-top: 60px;
+  }
+  .sidebar-open .navCenter,
+  .sidebar-open .navRight,
+  .sidebar-open .container,
+  .sidebar-open footer {
+    margin-left:160px;
+  }
 }
