@@ -7,13 +7,21 @@
     "dev": "nodemon ./bin/www"
   },
   "dependencies": {
+    "@vercel/node": "^5.3.22",
     "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
+    "debug": "^4.4.3",
     "ejs": "^3.1.10",
-    "express": "~4.16.1",
+    "express": "^4.21.2",
     "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
-    "morgan": "~1.9.1",
-    "nodemon": "^3.1.10"
+    "morgan": "^1.10.1",
+    "nodemon": "^3.1.10",
+    "pug": "^3.0.3"
+  },
+  "overrides": {
+    "clean-css": "^5.3.3",
+    "constantinople": "^4.0.1",
+    "path-to-regexp": "^6.3.0",
+    "uglify-js": "^3.17.4",
+    "esbuild": "^0.23.1"
   }
 }
