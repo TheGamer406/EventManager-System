@@ -53,13 +53,13 @@ body{
   font-family: var(--fuente-principal);
   background: var(--back-color);
   color: var(--text-color);
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
+  display: grid;
+  grid-template-columns: auto 1fr;
+
 }
 .container{
-  padding: 30px;
-  flex: 1;
+  
 }
 
 /*  Estilos Boton de cambio de de tema */
